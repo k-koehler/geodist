@@ -1,6 +1,8 @@
 // using SI base unit R_⊕
 const EARTH_RADIUS_M = 6371000;
 const DEG_2_RAD_SCALAR = 0.0174533;
+const EARTH_RADIUS_EQ_M = 6378137.0;
+const EARTH RADIUS_POLES_M = 6356752.314245;
 
 export function distanceHaversineMeters(
   lat1Deg: number,
@@ -24,4 +26,14 @@ export function distanceHaversineMeters(
       ),
     )
   );
+}
+
+export function distanceVincentyMeters(
+  lat1Deg: number,
+  lng1Deg: number,
+  lat2Deg: number,
+  lng2Deg: number,
+){
+  const a = EARTH_RADIUS_M,
+  f = 1/298.257223563,
 }
