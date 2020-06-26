@@ -5,16 +5,16 @@ import {
 import { GeoLocation, DistanceAlgorithm } from "./geolocation.ts";
 
 // get latitude/longitude
-(() => {
+{
   Deno.test("it should return the lat/lng props", () => {
     const location = new GeoLocation(15, 15);
     assertEquals(location.latitude, 15);
     assertEquals(location.longitude, 15);
   });
-})();
+}
 
 // distanceTo
-(() => {
+{
   Deno.test("it should throw an exception, distance algorithm not implemented yet", () => {
     assertThrows(() => {
       new GeoLocation(0, 0).distanceTo(
@@ -29,4 +29,4 @@ import { GeoLocation, DistanceAlgorithm } from "./geolocation.ts";
     const paris = new GeoLocation(48.864716, 2.349014);
     assertEquals(london.distanceTo(paris), 342536.21226624836);
   });
-})();
+}
